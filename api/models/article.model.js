@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const articleSchema = mongoose.Schema({
     id: mongoose.Schema.Types.ObjectId,
     title: { type: String, required: true },
-    description: { type: String, required: true },
-    content: { type: String, required: true },
-    image: { type: String, required: true },
-    createdAt: { type: Date, required: true },
+    description: { type: String },
+    content: { type: String },
+    image: { type: String },
+    createdAt: { type: Date },
     categoryId: { type: String, required: true },
 });
 

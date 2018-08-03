@@ -104,7 +104,7 @@ exports.articles_update = (req, res, next) => {
     createdAt: req.body.createdAt,
     categoryId: req.body.categoryId,
   });
-  article.update()
+  Article.findByIdAndUpdate(req.params.id, article)
     .exec()
     .then(doc => {
       res.status(200).json({
