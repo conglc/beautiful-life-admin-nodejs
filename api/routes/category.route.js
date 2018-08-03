@@ -6,11 +6,13 @@ const categoryController = require('../controllers/category.controller');
 
 router.get("/", categoryController.categories_get_all);
 
-router.post("/", authorize, upload.single('productImage'), categoryController.categories_create);
+router.post("/", categoryController.categories_create);
+
+router.get("/filter", categoryController.categories_get_by_name);
 
 router.get("/:id", categoryController.categories_get_by_id);
 
-router.patch("/:id", authorize, categoryController.categories_update);
+router.put("/:id", authorize, categoryController.categories_update);
 
 router.delete("/:id", authorize, categoryController.categories_delete);
 

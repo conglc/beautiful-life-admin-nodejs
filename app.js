@@ -26,9 +26,13 @@ app.use((req, res, next) => {
 
 const authRoutes = require('./api/routes/auth.route');
 const userRoutes = require('./api/routes/user.route');
+const categoryRoutes = require('./api/routes/category.route');
+const articleRoutes = require('./api/routes/article.route');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/articles', articleRoutes);
 
 app.use((req, res, next) => {
   console.log('Not found');
